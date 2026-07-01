@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Harpreet K — Product Manager with 9+ years in supply chain & logistics. Building intelligent systems that solve real operational problems.">
+  <meta name="theme-color" content="#0a0a0b">
+  <meta property="og:title" content="Harpreet K — Product Manager">
+  <meta property="og:description" content="Supply chain roots. Building for what's next.">
+  <meta property="og:type" content="website">
+  <title>Harpreet K — Product Manager</title>
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js" defer></script>
+
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬡</text></svg>">
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link" id="skip-link">Skip to main content</a>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+  <!-- ==============================
+       NAVIGATION
+       ============================== -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="#" class="nav__logo" id="nav-logo" aria-label="Harpreet K — Home">
+        <span class="nav__logo-mark">HK</span>
+      </a>
+      <div class="nav__links" id="nav-links">
+        <a href="#about" class="nav__link" id="nav-about">About</a>
+        <a href="#projects" class="nav__link" id="nav-work">Work</a>
+        <a href="#experience" class="nav__link" id="nav-experience">Experience</a>
+        <a href="#contact" class="nav__link" id="nav-contact">Contact</a>
+      </div>
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu">
+    <a href="#about" class="mobile-menu__link" id="mobile-about">About</a>
+    <a href="#projects" class="mobile-menu__link" id="mobile-work">Work</a>
+    <a href="#experience" class="mobile-menu__link" id="mobile-experience">Experience</a>
+    <a href="#contact" class="mobile-menu__link" id="mobile-contact">Contact</a>
+  </div>
+
+  <!-- ==============================
+       MAIN CONTENT
+       ============================== -->
+  <main id="main-content">
+
+    <!-- ==============================
+         HERO
+         ============================== -->
+    <section class="hero section" id="hero" aria-label="Introduction">
+      <div class="hero__grid" id="hero-grid" aria-hidden="true"></div>
+      <div class="hero__grain" aria-hidden="true"></div>
+      <div class="hero__glow" id="hero-glow" aria-hidden="true"></div>
+
+      <div class="container hero__content">
+        <h1 class="hero__name" id="hero-name">Harpreet K</h1>
+        <p class="hero__tagline" id="hero-tagline">
+          Product Manager. <em>Supply chain roots.</em><br>
+          Building for what's next.
+        </p>
+        <div class="hero__ctas" id="hero-ctas">
+          <a href="#projects" class="btn btn--primary" id="cta-view-work">
+            <span>View Work</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
+          </a>
+          <a href="docs/Harpreet Kaur-PM Resume.pdf" class="btn btn--secondary" id="cta-resume" download>
+            <span>Download Resume</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__scroll-indicator" id="hero-scroll">
+        <span class="hero__scroll-text">Scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <hr class="section-separator" aria-hidden="true">
+
+    <!-- ==============================
+         ABOUT
+         ============================== -->
+    <section class="section" id="about" aria-label="About Harpreet">
+      <div class="container">
+        <div class="reveal">
+          <span class="section-label">About</span>
+          <h2 class="section-heading">Operations instinct,<br>product execution.</h2>
+        </div>
+
+        <div class="about__grid">
+          <div class="about__text reveal">
+            <p>
+              I build products that fix operational problems at scale. For <strong>9+ years</strong> inside operations — mapping fulfillment journeys across <strong>1,200+ retail stores</strong>, running structured root cause analysis on delivery failures, aligning engineering and carrier teams — I was doing product work before I had the title.
+            </p>
+            <br>
+            <p>
+              Now I bring that operational instinct to every product decision: what's actually broken, who's feeling it, and what's the smallest change that creates the biggest impact. Most recently, I've gone deep on <strong>AI product development</strong> — shipping production-grade GenAI systems end-to-end through the NextLeap PM Fellowship.
+            </p>
+          </div>
+
+          <div class="about__metrics reveal-stagger">
+            <div class="metric reveal" style="--stagger-index: 0">
+              <div class="metric__value" data-count-to="92" data-count-from="72" data-suffix="%" id="metric-delivery">72%→92%</div>
+              <div class="metric__label">Nationwide delivery rate improvement</div>
+            </div>
+            <div class="metric reveal" style="--stagger-index: 1">
+              <div class="metric__value" id="metric-years">9+</div>
+              <div class="metric__label">Years operations & product experience</div>
+            </div>
+            <div class="metric reveal" style="--stagger-index: 2">
+              <div class="metric__value" id="metric-stores">1,200+</div>
+              <div class="metric__label">Retail stores impacted</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-separator" aria-hidden="true">
+
+    <!-- ==============================
+         PROJECTS
+         ============================== -->
+    <section class="section projects" id="projects" aria-label="Featured Projects">
+      <div class="container">
+        <div class="reveal">
+          <span class="section-label">Featured Work</span>
+          <h2 class="section-heading">Products I've built.</h2>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="projects__carousel">
+          <!-- Left Arrow -->
+          <button class="projects__arrow projects__arrow--left" id="projects-prev" aria-label="Previous project">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+          </button>
+
+          <div class="projects__track-wrapper">
+            <div class="projects__track" id="projects-track" role="list">
+
+              <!-- Project 1: AI Ops Automator -->
+              <article class="project-card reveal" style="--stagger-index: 0" role="listitem" id="project-1">
+                <div class="project-card__image">
+                  <img src="assets/project-ai-ops.png" alt="AI Ops Automator visualization — connected hexagonal nodes representing an AI pipeline" loading="lazy" width="420" height="220">
+                </div>
+                <div class="project-card__body">
+                  <div class="project-card__tags">
+                    <span class="project-card__tag">AI/ML</span>
+                    <span class="project-card__tag">NextLeap Fellowship</span>
+                    <span class="project-card__tag">Full-Stack</span>
+                  </div>
+                  <h3 class="project-card__title">Groww AI Ops Automator</h3>
+                  <p class="project-card__problem">
+                    Manual weekly reporting across scattered data sources created blind spots for product teams. Built a Map-Reduce LLM pipeline that scrapes live data, generates intelligence reports, and dispatches via custom MCP server.
+                  </p>
+                  <div class="project-card__outcome">
+                    → End-to-end automation with anti-hallucination KB-grounded prompting and PII compliance
+                  </div>
+                  <a href="#" class="project-card__cta" id="cta-project-1" aria-label="View case study for Groww AI Ops Automator">
+                    View Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </a>
+                </div>
+              </article>
+
+              <!-- Project 2: RAG Assistant -->
+              <article class="project-card reveal" style="--stagger-index: 1" role="listitem" id="project-2">
+                <div class="project-card__image">
+                  <img src="assets/project-rag.png" alt="RAG Assistant visualization — layered documents with connection nodes representing vector search" loading="lazy" width="420" height="220">
+                </div>
+                <div class="project-card__body">
+                  <div class="project-card__tags">
+                    <span class="project-card__tag">RAG</span>
+                    <span class="project-card__tag">Fintech</span>
+                    <span class="project-card__tag">NextLeap Fellowship</span>
+                  </div>
+                  <h3 class="project-card__title">Groww Mutual Fund RAG Assistant</h3>
+                  <p class="project-card__problem">
+                    Users lacked accurate, real-time mutual fund Q&A. Designed a production-grade RAG system with nightly automated data ingestion, PII sanitization, and ChromaDB vector embeddings.
+                  </p>
+                  <div class="project-card__outcome">
+                    → Deployed on Render + Vercel with nightly GitHub Actions CI/CD pipeline
+                  </div>
+                  <a href="#" class="project-card__cta" id="cta-project-2" aria-label="View case study for Groww Mutual Fund RAG Assistant">
+                    View Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </a>
+                </div>
+              </article>
+
+              <!-- Project 3: Emergency Order Fulfillment -->
+              <article class="project-card reveal" style="--stagger-index: 2" role="listitem" id="project-3">
+                <div class="project-card__image">
+                  <img src="assets/project-fulfillment.png" alt="Supply chain visualization — global network of connected nodes representing retail store logistics" loading="lazy" width="420" height="220">
+                </div>
+                <div class="project-card__body">
+                  <div class="project-card__tags">
+                    <span class="project-card__tag">Supply Chain</span>
+                    <span class="project-card__tag">Canadian Tire</span>
+                    <span class="project-card__tag">Operations</span>
+                  </div>
+                  <h3 class="project-card__title">Emergency Order Fulfillment Platform</h3>
+                  <p class="project-card__problem">
+                    Emergency order delays across 1,200+ retail stores. Led end-to-end product strategy — from problem discovery and RCA to real-time dashboards, automated alerting, and workflow optimization.
+                  </p>
+                  <div class="project-card__outcome">
+                    → 48% sales increase · 18% delay reduction · 24% faster resolution TAT
+                  </div>
+                  <a href="#" class="project-card__cta" id="cta-project-3" aria-label="View case study for Emergency Order Fulfillment Platform">
+                    View Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </a>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <!-- Right Arrow -->
+          <button class="projects__arrow projects__arrow--right" id="projects-next" aria-label="Next project">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-separator" aria-hidden="true">
+
+    <!-- ==============================
+         EXPERIENCE TIMELINE
+         ============================== -->
+    <section class="section" id="experience" aria-label="Professional Experience">
+      <div class="container">
+        <div class="reveal">
+          <span class="section-label">Experience</span>
+          <h2 class="section-heading">Where I've shipped.</h2>
+        </div>
+
+        <div class="timeline" id="timeline">
+          <div class="timeline__line" aria-hidden="true">
+            <div class="timeline__line-fill" id="timeline-fill"></div>
+          </div>
+
+          <!-- NextLeap -->
+          <div class="timeline__item reveal" style="--stagger-index: 0">
+            <div class="timeline__node"></div>
+            <div class="timeline__company">NextLeap</div>
+            <div class="timeline__role">PM Fellow</div>
+            <div class="timeline__period">Apr 2026 – Present</div>
+            <div class="timeline__impacts">
+              <p class="timeline__impact">Shipped production-grade GenAI systems end-to-end: RAG pipelines, MCP servers, LLM orchestration</p>
+              <p class="timeline__impact">Built Groww AI Ops Automator — Map-Reduce LLM pipeline with anti-hallucination KB-grounded prompting</p>
+              <p class="timeline__impact">Deployed RAG Mutual Fund Assistant on Render + Vercel with nightly CI/CD pipeline</p>
+            </div>
+          </div>
+
+          <!-- Canadian Tire - Dealer Orders -->
+          <div class="timeline__item reveal" style="--stagger-index: 1">
+            <div class="timeline__node"></div>
+            <div class="timeline__company">Canadian Tire Corporation</div>
+            <div class="timeline__role">Dealer Orders Specialist</div>
+            <div class="timeline__period">Jan 2025 – Present · 1 yr 7 mos</div>
+            <div class="timeline__impacts">
+              <p class="timeline__impact">Drove 48% increase in product sales and 18% reduction in urgent order delays across 1,200+ stores</p>
+              <p class="timeline__impact">Designed real-time node-capacity dashboards cutting emergency order processing latency by 12 min/shift</p>
+              <p class="timeline__impact">Shipped end-to-end order workflow optimization reducing daily action item turnaround by 18%</p>
+            </div>
+          </div>
+
+          <!-- Canadian Tire - Execution Analyst -->
+          <div class="timeline__item reveal" style="--stagger-index: 2">
+            <div class="timeline__node"></div>
+            <div class="timeline__company">Canadian Tire Corporation</div>
+            <div class="timeline__role">Execution Analyst</div>
+            <div class="timeline__period">Feb 2023 – Jan 2025 · 2 yrs</div>
+            <div class="timeline__impacts">
+              <p class="timeline__impact">28% improvement in nationwide delivery rates (72% → 92%) through data-driven interventions</p>
+              <p class="timeline__impact">Reduced service delays by 40% via proactive monitoring system using DMAIC framework</p>
+              <p class="timeline__impact">Engineered automated shipment visibility system integrating CP/CN Rail, P44, and OTM data streams</p>
+            </div>
+          </div>
+
+          <!-- Digikaur -->
+          <div class="timeline__item reveal" style="--stagger-index: 3">
+            <div class="timeline__node"></div>
+            <div class="timeline__company">Digikaur</div>
+            <div class="timeline__role">E-commerce Specialist</div>
+            <div class="timeline__period">Jan 2017 – Jan 2019 · 2 yrs 1 mo</div>
+            <div class="timeline__impacts">
+              <p class="timeline__impact">Managed e-commerce operations across Amazon, Flipkart, Myntra, and Snapdeal with 3PL logistics</p>
+              <p class="timeline__impact">Created 100+ social media campaigns driving revenue growth and brand visibility for clients</p>
+              <p class="timeline__impact">Set KPIs and SOPs as benchmarks to evaluate project effectiveness and budgets</p>
+            </div>
+          </div>
+
+          <!-- Amazon -->
+          <div class="timeline__item reveal" style="--stagger-index: 4">
+            <div class="timeline__node"></div>
+            <div class="timeline__company">Amazon Logistics</div>
+            <div class="timeline__role">Operations Associate</div>
+            <div class="timeline__period">Dec 2020 – Sep 2022 · 1 yr 10 mos</div>
+            <div class="timeline__impacts">
+              <p class="timeline__impact">Implemented quality improvement processes (5S, Andon) to ensure shipment quality standards</p>
+              <p class="timeline__impact">Increased operational efficiency through structured merchandise management and reporting</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-separator" aria-hidden="true">
+
+    <!-- ==============================
+         SKILLS
+         ============================== -->
+    <section class="section" id="skills" aria-label="Skills and Expertise">
+      <div class="container">
+        <div class="reveal">
+          <span class="section-label">Expertise</span>
+          <h2 class="section-heading">What I work with.</h2>
+        </div>
+
+        <div class="skills__grid reveal-stagger">
+
+          <div class="skills__category reveal" style="--stagger-index: 0">
+            <h3 class="skills__category-header">Product</h3>
+            <div class="skills__items">
+              <span class="skills__item">PRD Writing</span>
+              <span class="skills__item">Roadmapping</span>
+              <span class="skills__item">User Research</span>
+              <span class="skills__item">A/B Testing</span>
+              <span class="skills__item">RICE Framework</span>
+              <span class="skills__item">GTM Planning</span>
+              <span class="skills__item">Funnel Optimization</span>
+              <span class="skills__item">Sprint Planning</span>
+              <span class="skills__item">OKRs</span>
+              <span class="skills__item">Agile</span>
+            </div>
+          </div>
+
+          <div class="skills__category reveal" style="--stagger-index: 1">
+            <h3 class="skills__category-header">Domain</h3>
+            <div class="skills__items">
+              <span class="skills__item">Supply Chain</span>
+              <span class="skills__item">E-commerce</span>
+              <span class="skills__item">Fintech</span>
+              <span class="skills__item">Quick Commerce</span>
+              <span class="skills__item">Logistics</span>
+              <span class="skills__item">Retail Operations</span>
+              <span class="skills__item">Last-Mile Delivery</span>
+            </div>
+          </div>
+
+          <div class="skills__category reveal" style="--stagger-index: 2">
+            <h3 class="skills__category-header">Tools & Tech</h3>
+            <div class="skills__items">
+              <span class="skills__item">RAG Pipelines</span>
+              <span class="skills__item">LLM / MCP</span>
+              <span class="skills__item">FastAPI</span>
+              <span class="skills__item">ChromaDB</span>
+              <span class="skills__item">Python</span>
+              <span class="skills__item">Next.js</span>
+              <span class="skills__item">SQL</span>
+              <span class="skills__item">Figma</span>
+              <span class="skills__item">JIRA</span>
+              <span class="skills__item">Power BI</span>
+              <span class="skills__item">Mixpanel</span>
+              <span class="skills__item">Google Analytics</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-separator" aria-hidden="true">
+
+    <!-- ==============================
+         EDUCATION & CERTIFICATIONS
+         ============================== -->
+    <section class="section" id="education" aria-label="Education and Certifications">
+      <div class="container">
+        <div class="reveal">
+          <span class="section-label">Education</span>
+          <h2 class="section-heading">Learning never ships v1.0.</h2>
+        </div>
+
+        <div class="education__list reveal-stagger">
+
+          <!-- NextLeap — Featured -->
+          <div class="education__item education__item--featured reveal" style="--stagger-index: 0">
+            <div class="education__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div class="education__info">
+              <div class="education__title">NextLeap PM Fellowship</div>
+              <div class="education__subtitle">Product Management · AI Product Development</div>
+              <span class="education__badge">Cohort 48 · Active</span>
+            </div>
+            <div class="education__date">Apr 2026 – Present</div>
+          </div>
+
+          <!-- Lean Six Sigma -->
+          <div class="education__item reveal" style="--stagger-index: 1">
+            <div class="education__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 12 3 12 0v-5"/></svg>
+            </div>
+            <div class="education__info">
+              <div class="education__title">Lean Six Sigma Certification</div>
+              <div class="education__subtitle">KPMG · Coursera</div>
+            </div>
+            <div class="education__date">Jan 2026</div>
+          </div>
+
+          <!-- Google PM -->
+          <div class="education__item reveal" style="--stagger-index: 2">
+            <div class="education__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 12 3 12 0v-5"/></svg>
+            </div>
+            <div class="education__info">
+              <div class="education__title">Google Project Management Certificate</div>
+              <div class="education__subtitle">Professional Certificate</div>
+            </div>
+            <div class="education__date">Nov 2025</div>
+          </div>
+
+          <!-- St. Clair -->
+          <div class="education__item reveal" style="--stagger-index: 3">
+            <div class="education__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 12 3 12 0v-5"/></svg>
+            </div>
+            <div class="education__info">
+              <div class="education__title">St. Clair College, Ontario</div>
+              <div class="education__subtitle">Diploma — International Business Management & Logistics</div>
+            </div>
+            <div class="education__date">May 2019 – Aug 2020</div>
+          </div>
+
+          <!-- Vaish College -->
+          <div class="education__item reveal" style="--stagger-index: 4">
+            <div class="education__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 12 3 12 0v-5"/></svg>
+            </div>
+            <div class="education__info">
+              <div class="education__title">Vaish College of Engineering, Rohtak</div>
+              <div class="education__subtitle">B.Tech — Information Technology</div>
+            </div>
+            <div class="education__date">May 2009 – Aug 2013</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-separator" aria-hidden="true">
+
+    <!-- ==============================
+         CONTACT
+         ============================== -->
+    <section class="section contact" id="contact" aria-label="Contact">
+      <div class="container">
+        <div class="reveal">
+          <h2 class="contact__headline">I ship products, not decks.<br>Let's talk.</h2>
+          <p class="contact__subtext">Open to Senior PM and AI PM roles — remote & global opportunities.</p>
+        </div>
+        <div class="contact__links reveal">
+          <a href="mailto:kharpreet007@gmail.com" class="btn btn--primary" id="cta-email">
+            <span>Send Email</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/kharpreet007" target="_blank" rel="noopener noreferrer" class="contact__icon-link" id="cta-linkedin" aria-label="LinkedIn Profile">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://github.com/kharpreet007" target="_blank" rel="noopener noreferrer" class="contact__icon-link" id="cta-github" aria-label="GitHub Profile">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <a href="docs/Harpreet Kaur-PM Resume.pdf" class="contact__icon-link" id="cta-resume-footer" aria-label="Download Resume" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <p class="footer__text">© 2026 Harpreet K. Built with intention.</p>
+    </div>
+  </footer>
+
+  <!-- Main Script -->
+  <script src="main.js" defer></script>
+</body>
+</html>
