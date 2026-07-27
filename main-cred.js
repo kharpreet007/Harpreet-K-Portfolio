@@ -2,10 +2,19 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('year').textContent = new Date().getFullYear();
 
   // 1. Inject Projects from data.js
+  const credImages = {
+    "project-1": "assets/cred-ai-ops.png",
+    "project-2": "assets/cred-rag.png",
+    "project-3": "assets/cred-fulfillment.png",
+    "project-4": "assets/cred-po-match.png",
+    "project-5": "assets/cred-kharch.png"
+  };
+
   const projectList = document.getElementById('project-list');
   if (typeof projectsData !== 'undefined') {
     Object.keys(projectsData).forEach((id, index) => {
       const project = projectsData[id];
+      const imageSrc = credImages[id] || project.image;
       const projectHTML = `
         <article class="project-item gs-reveal">
           <div class="project-info">
@@ -21,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </a>
           </div>
           <div class="project-image-wrapper" data-cursor="hover">
-            <img src="${project.image}" alt="${project.title}" class="project-image">
+            <img src="${imageSrc}" alt="${project.title}" class="project-image">
           </div>
         </article>
       `;
