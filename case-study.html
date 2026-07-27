@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study — Harpreet K</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css?v=2">
+  
+  <style>
+    .case-study-hero {
+      padding: var(--section-padding) 0 4rem;
+      background: var(--bg-primary);
+      border-bottom: 2px solid var(--border);
+    }
+    .case-study-header {
+      margin-bottom: 3rem;
+    }
+    .case-study-category {
+      font-family: var(--font-mono);
+      color: var(--accent);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+    .case-study-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      color: var(--text-primary);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    .case-study-image {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: var(--border-radius-lg);
+      border: 2px solid var(--border);
+      box-shadow: var(--shadow-brutalist);
+    }
+    .case-study-body {
+      padding: 4rem 0;
+      background: var(--bg-secondary);
+    }
+    .case-study-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 4rem;
+    }
+    @media (max-width: 768px) {
+      .case-study-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .cs-section {
+      margin-bottom: 3rem;
+    }
+    .cs-heading {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+    .cs-text {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .cs-list {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      margin-top: 1rem;
+    }
+    .cs-list li {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+    .cs-sidebar-block {
+      background: var(--bg-elevated);
+      padding: 2rem;
+      border: 2px solid var(--border);
+      border-radius: var(--border-radius-md);
+      box-shadow: 4px 4px 0 var(--border);
+      margin-bottom: 2rem;
+    }
+    .cs-sidebar-heading {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+    .cs-tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .cs-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      background: var(--accent-glow);
+      color: var(--accent);
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      border: 1px solid var(--accent-dim);
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      color: var(--text-primary);
+      text-decoration: none;
+      margin-bottom: 2rem;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+    .back-btn:hover {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation (Simplified) -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">Harpreet <span style="color: var(--accent)">K</span>.</a>
+    </div>
+  </header>
+
+  <main id="case-study-content">
+    <!-- Dynamic content injected here -->
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; <span id="year"></span> Harpreet Kaur. Built with purpose.</p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectId = urlParams.get('id');
+    const project = projectsData[projectId];
+
+    const mainContainer = document.getElementById('case-study-content');
+
+    if (!project) {
+      mainContainer.innerHTML = `
+        <div class="container" style="padding: 10rem 0; text-align: center;">
+          <h1 class="case-study-title">Project not found</h1>
+          <a href="index.html" class="btn btn--primary" style="margin-top: 2rem;">Back to Portfolio</a>
+        </div>
+      `;
+    } else {
+      mainContainer.innerHTML = `
+        <section class="case-study-hero">
+          <div class="container">
+            <a href="index.html#projects" class="back-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+              Back to Projects
+            </a>
+            <div class="case-study-header">
+              <span class="case-study-category">${project.category}</span>
+              <h1 class="case-study-title">${project.title}</h1>
+            </div>
+            <img src="${project.image}" alt="${project.title} Interface" class="case-study-image">
+          </div>
+        </section>
+
+        <section class="case-study-body">
+          <div class="container case-study-grid">
+            <div class="cs-main-content">
+              <div class="cs-section">
+                <h2 class="cs-heading">What it is</h2>
+                <p class="cs-text">${project.whatItIs}</p>
+              </div>
+              
+              <div class="cs-section">
+                <h2 class="cs-heading">My Role</h2>
+                <p class="cs-text">${project.role}</p>
+              </div>
+
+              <div class="cs-section">
+                <h2 class="cs-heading">Key Highlights</h2>
+                <ul class="cs-list">
+                  ${project.highlights.map(h => `<li>${h}</li>`).join('')}
+                </ul>
+              </div>
+            </div>
+
+            <aside class="cs-sidebar">
+              <div class="cs-sidebar-block">
+                <h3 class="cs-sidebar-heading">Tech & Tools</h3>
+                <div class="cs-tag-cloud">
+                  ${project.tech.map(t => `<span class="cs-tag">${t}</span>`).join('')}
+                </div>
+              </div>
+
+              <div class="cs-sidebar-block" style="background: var(--bg-primary);">
+                <h3 class="cs-sidebar-heading" style="color: var(--text-primary)">Deliverables</h3>
+                <ul class="cs-list" style="margin-top: 0;">
+                  ${project.deliverables.map(d => `<li style="font-size: 0.95rem; margin-bottom: 0.5rem;">${d}</li>`).join('')}
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </section>
+      `;
+    }
+  </script>
+</body>
+</html>
