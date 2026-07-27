@@ -1,0 +1,104 @@
+/* ============================================================
+   SUPER.SO CUSTOM CSS - NEO-BRUTALIST PORTFOLIO THEME
+   Copy and paste this into Super.so > Code > CSS
+   ============================================================ */
+
+:root {
+  /* Colors */
+  --bg-primary: #FFF8E7; /* Soft cream */
+  --bg-secondary: #FFE7C0; /* Warm cream */
+  --bg-elevated: #FFFFFF;
+  
+  --text-primary: #1A1A1A;
+  --text-secondary: #333333;
+  --text-muted: #666666;
+  
+  /* Primary accents */
+  --accent: #FF5A5F; /* Coral / Pink */
+  --accent-blue: #00B4D8;
+  --accent-yellow: #FFD166;
+  --accent-green: #06D6A0;
+
+  /* Borders (Neo-Brutalist) */
+  --border: #1A1A1A;
+  
+  /* Typography */
+  --font-display: 'Fredoka', system-ui, sans-serif;
+  --font-body: 'Nunito', system-ui, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Base Body Override */
+body, .notion-app-inner {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-secondary) !important;
+  font-family: var(--font-body) !important;
+}
+
+/* Headings */
+h1.notion-header__title, .notion-heading {
+  font-family: var(--font-display) !important;
+  color: var(--text-primary) !important;
+  font-weight: 600 !important;
+}
+
+/* Links & Buttons (Neo-brutalist style) */
+.notion-link {
+  color: var(--text-primary) !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--accent) !important;
+  text-decoration-thickness: 2px !important;
+  transition: all 0.2s ease;
+}
+.notion-link:hover {
+  background-color: var(--accent-yellow);
+}
+
+/* Callouts (Used as Buttons or Highlights) */
+.notion-callout {
+  background-color: var(--bg-secondary) !important;
+  border: 2px solid var(--border) !important;
+  box-shadow: 4px 4px 0 var(--border) !important;
+  border-radius: 8px !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.notion-callout:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 6px 6px 0 var(--border) !important;
+}
+
+/* Gallery (Projects) */
+.notion-collection-gallery {
+  gap: 2rem !important;
+}
+.notion-collection-card {
+  background-color: var(--bg-elevated) !important;
+  border: 2px solid var(--border) !important;
+  box-shadow: 6px 6px 0 var(--border) !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+.notion-collection-card:hover {
+  transform: translate(-4px, -4px) !important;
+  box-shadow: 10px 10px 0 var(--border) !important;
+}
+.notion-collection-card__property {
+  font-family: var(--font-body) !important;
+}
+
+/* Divider */
+.notion-divider {
+  border-bottom: 2px dashed var(--border) !important;
+  opacity: 0.5;
+}
+
+/* Tags (Multi-select properties) */
+.notion-property__select {
+  border: 2px solid var(--border) !important;
+  border-radius: 999px !important;
+  font-family: var(--font-mono) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  padding: 2px 8px !important;
+}

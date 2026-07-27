@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
 
   <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
@@ -74,24 +74,30 @@
          ============================== -->
     <section class="hero section" id="hero" aria-label="Introduction">
       <div class="hero__grid" id="hero-grid" aria-hidden="true"></div>
-      <div class="hero__grain" aria-hidden="true"></div>
-      <div class="hero__glow" id="hero-glow" aria-hidden="true"></div>
-
-      <div class="container hero__content">
-        <h1 class="hero__name" id="hero-name">Harpreet K</h1>
-        <p class="hero__tagline" id="hero-tagline">
-          Product Manager. <em>Supply chain roots.</em><br>
-          Building for what's next.
-        </p>
-        <div class="hero__ctas" id="hero-ctas">
-          <a href="#projects" class="btn btn--primary" id="cta-view-work">
-            <span>View Work</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
-          </a>
-          <a href="docs/Harpreet Kaur-PM Resume.pdf" class="btn btn--secondary" id="cta-resume" download>
-            <span>Download Resume</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          </a>
+      
+      <div class="container hero__content-wrapper">
+        <div class="hero__content">
+          <h1 class="hero__name" id="hero-name">Harpreet K</h1>
+          <p class="hero__tagline" id="hero-tagline">
+            Product Manager. <em>Supply chain roots.</em><br>
+            Building for what's next with a touch of fun!
+          </p>
+          <div class="hero__ctas" id="hero-ctas">
+            <a href="#projects" class="btn btn--primary" id="cta-view-work">
+              <span>View Work</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
+            </a>
+            <a href="docs/Harpreet Kaur-PM Resume.pdf" class="btn btn--secondary" id="cta-resume" download>
+              <span>Download Resume</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="hero__image" id="hero-image">
+          <span class="hero__decor hero__decor--1" aria-hidden="true">✨</span>
+          <span class="hero__decor hero__decor--2" aria-hidden="true">💡</span>
+          <span class="hero__decor hero__decor--3" aria-hidden="true">💛</span>
+          <img src="assets/pm-caricature.png" alt="Playful 3D caricature of Harpreet" width="500" height="500">
         </div>
       </div>
 
@@ -152,6 +158,12 @@
         <div class="reveal">
           <span class="section-label">Featured Work</span>
           <h2 class="section-heading">Products I've built.</h2>
+          <div class="projects__filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ai-ml">AI/ML</button>
+            <button class="filter-btn" data-filter="supply-chain">Supply Chain</button>
+            <button class="filter-btn" data-filter="full-stack">Full-Stack</button>
+          </div>
         </div>
       </div>
 
@@ -166,9 +178,9 @@
             <div class="projects__track" id="projects-track" role="list">
 
               <!-- Project 1: AI Ops Automator -->
-              <article class="project-card reveal" style="--stagger-index: 0" role="listitem" id="project-1">
+              <article class="project-card reveal" style="--stagger-index: 0" role="listitem" data-category="ai-ml full-stack" id="project-1">
                 <div class="project-card__image">
-                  <img src="assets/project-ai-ops.png" alt="AI Ops Automator visualization — connected hexagonal nodes representing an AI pipeline" loading="lazy" width="420" height="220">
+                  <img src="assets/project-ai-ops.png?v=2" alt="AI Ops Automator visualization" loading="lazy" width="420" height="220" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <div class="project-card__body">
                   <div class="project-card__tags">
@@ -183,7 +195,8 @@
                   <div class="project-card__outcome">
                     → End-to-end automation with anti-hallucination KB-grounded prompting and PII compliance
                   </div>
-                  <a href="#" class="project-card__cta" id="cta-project-1" aria-label="View case study for Groww AI Ops Automator">
+                  <!-- 👇 PASTE YOUR NOTION CASE STUDY LINK IN THE href BELOW 👇 -->
+                  <a href="https://notion.so/your-page-id" target="_blank" rel="noopener noreferrer" class="project-card__cta" id="cta-project-1" aria-label="View case study for Groww AI Ops Automator">
                     View Case Study
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                   </a>
@@ -191,9 +204,9 @@
               </article>
 
               <!-- Project 2: RAG Assistant -->
-              <article class="project-card reveal" style="--stagger-index: 1" role="listitem" id="project-2">
+              <article class="project-card reveal" style="--stagger-index: 1" role="listitem" data-category="ai-ml" id="project-2">
                 <div class="project-card__image">
-                  <img src="assets/project-rag.png" alt="RAG Assistant visualization — layered documents with connection nodes representing vector search" loading="lazy" width="420" height="220">
+                  <img src="assets/project-rag.png?v=2" alt="RAG Assistant visualization" loading="lazy" width="420" height="220" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <div class="project-card__body">
                   <div class="project-card__tags">
@@ -208,7 +221,8 @@
                   <div class="project-card__outcome">
                     → Deployed on Render + Vercel with nightly GitHub Actions CI/CD pipeline
                   </div>
-                  <a href="#" class="project-card__cta" id="cta-project-2" aria-label="View case study for Groww Mutual Fund RAG Assistant">
+                  <!-- 👇 PASTE YOUR NOTION CASE STUDY LINK IN THE href BELOW 👇 -->
+                  <a href="https://notion.so/your-page-id-2" target="_blank" rel="noopener noreferrer" class="project-card__cta" id="cta-project-2" aria-label="View case study for Groww Mutual Fund RAG Assistant">
                     View Case Study
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                   </a>
@@ -216,9 +230,9 @@
               </article>
 
               <!-- Project 3: Emergency Order Fulfillment -->
-              <article class="project-card reveal" style="--stagger-index: 2" role="listitem" id="project-3">
+              <article class="project-card reveal" style="--stagger-index: 2" role="listitem" data-category="supply-chain" id="project-3">
                 <div class="project-card__image">
-                  <img src="assets/project-fulfillment.png" alt="Supply chain visualization — global network of connected nodes representing retail store logistics" loading="lazy" width="420" height="220">
+                  <img src="assets/project-fulfillment.png?v=2" alt="Emergency Order Fulfillment visualization" loading="lazy" width="420" height="220" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <div class="project-card__body">
                   <div class="project-card__tags">
@@ -233,7 +247,58 @@
                   <div class="project-card__outcome">
                     → 48% sales increase · 18% delay reduction · 24% faster resolution TAT
                   </div>
-                  <a href="#" class="project-card__cta" id="cta-project-3" aria-label="View case study for Emergency Order Fulfillment Platform">
+                  <!-- 👇 PASTE YOUR NOTION CASE STUDY LINK IN THE href BELOW 👇 -->
+                  <a href="https://notion.so/your-page-id-3" target="_blank" rel="noopener noreferrer" class="project-card__cta" id="cta-project-3" aria-label="View case study for Emergency Order Fulfillment Platform">
+                    View Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </a>
+                </div>
+              </article>
+
+              <!-- Project 4: PO Match Buddy -->
+              <article class="project-card reveal" style="--stagger-index: 3" role="listitem" data-category="supply-chain automation" id="project-4">
+                <div class="project-card__image">
+                  <img src="assets/project-po-match.png?v=2" alt="PO Match Buddy visualization" loading="lazy" width="420" height="220" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="project-card__body">
+                  <div class="project-card__tags">
+                    <span class="project-card__tag">Supply Chain</span>
+                    <span class="project-card__tag">Automation</span>
+                  </div>
+                  <h3 class="project-card__title">PO Match Buddy</h3>
+                  <p class="project-card__problem">
+                    An intelligent automated tool to reconcile and match purchase orders effortlessly. Eliminates manual cross-referencing and speeds up procurement cycles.
+                  </p>
+                  <div class="project-card__outcome">
+                    → Automated PO reconciliation and workflow tracking
+                  </div>
+                  <!-- 👇 PASTE YOUR NOTION CASE STUDY LINK IN THE href BELOW 👇 -->
+                  <a href="https://notion.so/your-page-id-4" target="_blank" rel="noopener noreferrer" class="project-card__cta" id="cta-project-4" aria-label="View case study for PO Match Buddy">
+                    View Case Study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </a>
+                </div>
+              </article>
+
+              <!-- Project 5: Kharch Spend Smart -->
+              <article class="project-card reveal" style="--stagger-index: 4" role="listitem" data-category="full-stack fintech" id="project-5">
+                <div class="project-card__image">
+                  <img src="assets/project-kharch-spend.png?v=2" alt="Kharch Spend Smart visualization" loading="lazy" width="420" height="220" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="project-card__body">
+                  <div class="project-card__tags">
+                    <span class="project-card__tag">FinTech</span>
+                    <span class="project-card__tag">Full-Stack</span>
+                  </div>
+                  <h3 class="project-card__title">Kharch Spend Smart</h3>
+                  <p class="project-card__problem">
+                    A comprehensive personal finance application designed to help users track expenses, manage budgets, and build better financial habits.
+                  </p>
+                  <div class="project-card__outcome">
+                    → Intuitive dashboard with real-time spend analytics
+                  </div>
+                  <!-- 👇 PASTE YOUR NOTION CASE STUDY LINK IN THE href BELOW 👇 -->
+                  <a href="https://notion.so/your-page-id-5" target="_blank" rel="noopener noreferrer" class="project-card__cta" id="cta-project-5" aria-label="View case study for Kharch Spend Smart">
                     View Case Study
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                   </a>
@@ -271,64 +336,99 @@
           <!-- NextLeap -->
           <div class="timeline__item reveal" style="--stagger-index: 0">
             <div class="timeline__node"></div>
-            <div class="timeline__company">NextLeap</div>
-            <div class="timeline__role">PM Fellow</div>
-            <div class="timeline__period">Apr 2026 – Present</div>
-            <div class="timeline__impacts">
-              <p class="timeline__impact">Shipped production-grade GenAI systems end-to-end: RAG pipelines, MCP servers, LLM orchestration</p>
-              <p class="timeline__impact">Built Groww AI Ops Automator — Map-Reduce LLM pipeline with anti-hallucination KB-grounded prompting</p>
-              <p class="timeline__impact">Deployed RAG Mutual Fund Assistant on Render + Vercel with nightly CI/CD pipeline</p>
+            <div class="timeline__card">
+              <div class="timeline__card-header">
+                <div>
+                  <div class="timeline__company">NextLeap</div>
+                  <div class="timeline__role">PM Fellow</div>
+                </div>
+                <div class="timeline__emoji">🚀</div>
+              </div>
+              <div class="timeline__period">Apr 2026 – Present</div>
+              <div class="timeline__impacts">
+                <p class="timeline__impact">Shipped production-grade GenAI systems end-to-end: RAG pipelines, MCP servers, LLM orchestration</p>
+                <p class="timeline__impact">Built Groww AI Ops Automator — Map-Reduce LLM pipeline with anti-hallucination KB-grounded prompting</p>
+                <p class="timeline__impact">Deployed RAG Mutual Fund Assistant on Render + Vercel with nightly CI/CD pipeline</p>
+              </div>
             </div>
           </div>
 
           <!-- Canadian Tire - Dealer Orders -->
           <div class="timeline__item reveal" style="--stagger-index: 1">
             <div class="timeline__node"></div>
-            <div class="timeline__company">Canadian Tire Corporation</div>
-            <div class="timeline__role">Dealer Orders Specialist</div>
-            <div class="timeline__period">Jan 2025 – Present · 1 yr 7 mos</div>
-            <div class="timeline__impacts">
-              <p class="timeline__impact">Drove 48% increase in product sales and 18% reduction in urgent order delays across 1,200+ stores</p>
-              <p class="timeline__impact">Designed real-time node-capacity dashboards cutting emergency order processing latency by 12 min/shift</p>
-              <p class="timeline__impact">Shipped end-to-end order workflow optimization reducing daily action item turnaround by 18%</p>
+            <div class="timeline__card">
+              <div class="timeline__card-header">
+                <div>
+                  <div class="timeline__company">Canadian Tire Corporation</div>
+                  <div class="timeline__role">Dealer Orders Specialist</div>
+                </div>
+                <div class="timeline__emoji">📦</div>
+              </div>
+              <div class="timeline__period">Jan 2025 – Present · 1 yr 7 mos</div>
+              <div class="timeline__impacts">
+                <p class="timeline__impact">Drove 48% increase in product sales and 18% reduction in urgent order delays across 1,200+ stores</p>
+                <p class="timeline__impact">Designed real-time node-capacity dashboards cutting emergency order processing latency by 12 min/shift</p>
+                <p class="timeline__impact">Shipped end-to-end order workflow optimization reducing daily action item turnaround by 18%</p>
+              </div>
             </div>
           </div>
 
           <!-- Canadian Tire - Execution Analyst -->
           <div class="timeline__item reveal" style="--stagger-index: 2">
             <div class="timeline__node"></div>
-            <div class="timeline__company">Canadian Tire Corporation</div>
-            <div class="timeline__role">Execution Analyst</div>
-            <div class="timeline__period">Feb 2023 – Jan 2025 · 2 yrs</div>
-            <div class="timeline__impacts">
-              <p class="timeline__impact">28% improvement in nationwide delivery rates (72% → 92%) through data-driven interventions</p>
-              <p class="timeline__impact">Reduced service delays by 40% via proactive monitoring system using DMAIC framework</p>
-              <p class="timeline__impact">Engineered automated shipment visibility system integrating CP/CN Rail, P44, and OTM data streams</p>
-            </div>
-          </div>
-
-          <!-- Digikaur -->
-          <div class="timeline__item reveal" style="--stagger-index: 3">
-            <div class="timeline__node"></div>
-            <div class="timeline__company">Digikaur</div>
-            <div class="timeline__role">E-commerce Specialist</div>
-            <div class="timeline__period">Jan 2017 – Jan 2019 · 2 yrs 1 mo</div>
-            <div class="timeline__impacts">
-              <p class="timeline__impact">Managed e-commerce operations across Amazon, Flipkart, Myntra, and Snapdeal with 3PL logistics</p>
-              <p class="timeline__impact">Created 100+ social media campaigns driving revenue growth and brand visibility for clients</p>
-              <p class="timeline__impact">Set KPIs and SOPs as benchmarks to evaluate project effectiveness and budgets</p>
+            <div class="timeline__card">
+              <div class="timeline__card-header">
+                <div>
+                  <div class="timeline__company">Canadian Tire Corporation</div>
+                  <div class="timeline__role">Execution Analyst</div>
+                </div>
+                <div class="timeline__emoji">🚢</div>
+              </div>
+              <div class="timeline__period">Feb 2023 – Jan 2025 · 2 yrs</div>
+              <div class="timeline__impacts">
+                <p class="timeline__impact">28% improvement in nationwide delivery rates (72% → 92%) through data-driven interventions</p>
+                <p class="timeline__impact">Reduced service delays by 40% via proactive monitoring system using DMAIC framework</p>
+                <p class="timeline__impact">Engineered automated shipment visibility system integrating CP/CN Rail, P44, and OTM data streams</p>
+              </div>
             </div>
           </div>
 
           <!-- Amazon -->
+          <div class="timeline__item reveal" style="--stagger-index: 3">
+            <div class="timeline__node"></div>
+            <div class="timeline__card">
+              <div class="timeline__card-header">
+                <div>
+                  <div class="timeline__company">Amazon Logistics</div>
+                  <div class="timeline__role">Operations Associate</div>
+                </div>
+                <div class="timeline__emoji">🚚</div>
+              </div>
+              <div class="timeline__period">Dec 2020 – Sep 2022 · 1 yr 10 mos</div>
+              <div class="timeline__impacts">
+                <p class="timeline__impact">Implemented quality improvement processes (5S, Andon) to ensure shipment quality standards</p>
+                <p class="timeline__impact">Increased operational efficiency through structured merchandise management and reporting</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Digikaur -->
           <div class="timeline__item reveal" style="--stagger-index: 4">
             <div class="timeline__node"></div>
-            <div class="timeline__company">Amazon Logistics</div>
-            <div class="timeline__role">Operations Associate</div>
-            <div class="timeline__period">Dec 2020 – Sep 2022 · 1 yr 10 mos</div>
-            <div class="timeline__impacts">
-              <p class="timeline__impact">Implemented quality improvement processes (5S, Andon) to ensure shipment quality standards</p>
-              <p class="timeline__impact">Increased operational efficiency through structured merchandise management and reporting</p>
+            <div class="timeline__card">
+              <div class="timeline__card-header">
+                <div>
+                  <div class="timeline__company">Digikaur</div>
+                  <div class="timeline__role">E-commerce Specialist</div>
+                </div>
+                <div class="timeline__emoji">🛒</div>
+              </div>
+              <div class="timeline__period">Jan 2017 – Jan 2019 · 2 yrs 1 mo</div>
+              <div class="timeline__impacts">
+                <p class="timeline__impact">Managed e-commerce operations across Amazon, Flipkart, Myntra, and Snapdeal with 3PL logistics</p>
+                <p class="timeline__impact">Created 100+ social media campaigns driving revenue growth and brand visibility for clients</p>
+                <p class="timeline__impact">Set KPIs and SOPs as benchmarks to evaluate project effectiveness and budgets</p>
+              </div>
             </div>
           </div>
 

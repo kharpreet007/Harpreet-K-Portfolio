@@ -22,7 +22,7 @@
     initScrollReveals();
     initTimelineFill();
     initSkillsReveal();
-    initProjectCarousel();
+    initProjectFiltersAndCarousel();
   }
 
   /* ----------------------------------------------------------
@@ -190,7 +190,6 @@
      ---------------------------------------------------------- */
   function initHeroSequence() {
     if (prefersReducedMotion()) {
-      // Just show everything immediately
       showHeroInstantly();
       return;
     }
@@ -199,48 +198,71 @@
 
     // 1. Grid draws in
     tl.to('#hero-grid', {
-      opacity: 1,
+      opacity: 0.5,
       duration: 0.8,
       ease: 'power2.out',
     });
 
-    // 2. Ambient glow fades in
-    tl.to('#hero-glow', {
-      opacity: 0.6,
-      duration: 1,
-      ease: 'power2.out',
-    }, '-=0.5');
-
-    // 3. Name slides up
-    tl.to('#hero-name', {
-      opacity: 1,
-      y: 0,
-      duration: 0.9,
-      ease: 'expo.out',
-    }, '-=0.6');
-
-    // 4. Tagline fades up
-    tl.to('#hero-tagline', {
-      opacity: 1,
-      y: 0,
-      duration: 0.7,
-      ease: 'expo.out',
+    // 2. Image bounces in
+    gsap.set('#hero-image img', { scale: 0, rotation: -15 });
+    tl.to('#hero-image img', {
+      scale: 1,
+      rotation: 2,
+      duration: 1.2,
+      ease: 'elastic.out(1, 0.5)',
+      onComplete: () => {
+        // Continuous floating animation
+        gsap.to('#hero-image img', {
+          y: -15,
+          rotation: 0,
+          duration: 2.5,
+          yoyo: true,
+          repeat: -1,
+          ease: 'sine.inOut'
+        });
+      }
     }, '-=0.4');
 
-    // 5. CTAs bloom in
-    tl.to('#hero-ctas', {
+    // Decorative floating elements animation
+    gsap.set('.hero__decor', { scale: 0, opacity: 0 });
+    tl.to('.hero__decor', {
+      scale: 1,
       opacity: 1,
-      y: 0,
-      duration: 0.6,
-      ease: 'expo.out',
-    }, '-=0.3');
+      duration: 0.8,
+      stagger: 0.2,
+      ease: 'back.out(1.7)',
+      onComplete: () => {
+        gsap.to('.hero__decor', {
+          y: -10,
+          duration: 1.5,
+          yoyo: true,
+          repeat: -1,
+          stagger: 0.3,
+          ease: 'sine.inOut'
+        });
+      }
+    }, '-=0.8');
 
-    // 6. Scroll indicator
-    tl.to('#hero-scroll', {
-      opacity: 1,
-      duration: 0.5,
-      ease: 'power2.out',
-    }, '-=0.2');
+    // 3. Name slides up with bounce
+    tl.fromTo('#hero-name', 
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1, ease: 'elastic.out(1, 0.7)' },
+      '-=1'
+    );
+
+    // 4. Tagline fades up
+    tl.fromTo('#hero-tagline',
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.8, ease: 'back.out(1.7)' },
+      '-=0.8'
+    );
+
+    // 5. CTAs bloom in
+    tl.fromTo('#hero-ctas',
+      { opacity: 0, y: 20, scale: 0.9 },
+      { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: 'back.out(1.5)' },
+      '-=0.6'
+    );
 
     // Parallax effect on hero grid
     gsap.to('#hero-grid', {
@@ -254,9 +276,9 @@
       },
     });
 
-    // Parallax on glow
-    gsap.to('#hero-glow', {
-      yPercent: 50,
+    // Parallax on Image
+    gsap.to('#hero-image', {
+      yPercent: 15,
       ease: 'none',
       scrollTrigger: {
         trigger: '#hero',
@@ -293,7 +315,7 @@
   }
 
   function showHeroInstantly() {
-    const els = ['#hero-grid', '#hero-glow', '#hero-name', '#hero-tagline', '#hero-ctas', '#hero-scroll'];
+    const els = ['#hero-grid', '#hero-image img', '#hero-name', '#hero-tagline', '#hero-ctas', '#hero-scroll'];
     els.forEach((sel) => {
       const el = document.querySelector(sel);
       if (el) {
@@ -415,17 +437,23 @@
   }
 
   /* ----------------------------------------------------------
-     PROJECT CAROUSEL ARROWS
+     PROJECT CATEGORY FILTERS & CAROUSEL
      ---------------------------------------------------------- */
-  function initProjectCarousel() {
+  function initProjectFiltersAndCarousel() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    // Carousel elements
     const track = document.getElementById('projects-track');
     const prevBtn = document.getElementById('projects-prev');
     const nextBtn = document.getElementById('projects-next');
 
-    if (!track || !prevBtn || !nextBtn) return;
+    if (!filterBtns.length || !projectCards.length) return;
 
     function getCardWidth() {
-      const card = track.querySelector('.project-card');
+      if (!track) return 440;
+      // Get width of first visible card
+      const card = Array.from(projectCards).find(c => c.style.display !== 'none');
       if (!card) return 440;
       const style = getComputedStyle(track);
       const gap = parseFloat(style.gap) || 32;
@@ -433,34 +461,75 @@
     }
 
     function updateArrowStates() {
+      if (!track || !prevBtn || !nextBtn) return;
       const scrollLeft = Math.round(track.scrollLeft);
-      const maxScroll = track.scrollWidth - track.clientWidth;
+      // Small margin of error for fractional pixel scrolling
+      const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
 
-      if (scrollLeft <= 2) {
+      if (scrollLeft <= 5) {
         prevBtn.classList.add('disabled');
       } else {
         prevBtn.classList.remove('disabled');
       }
 
-      if (scrollLeft >= maxScroll - 2) {
+      if (scrollLeft >= maxScroll - 5) {
         nextBtn.classList.add('disabled');
       } else {
         nextBtn.classList.remove('disabled');
       }
     }
 
-    prevBtn.addEventListener('click', () => {
-      track.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
+    if (prevBtn && nextBtn && track) {
+      prevBtn.addEventListener('click', () => {
+        track.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
+      });
+
+      nextBtn.addEventListener('click', () => {
+        track.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
+      });
+
+      track.addEventListener('scroll', updateArrowStates, { passive: true });
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all
+        filterBtns.forEach(b => b.classList.remove('active'));
+        // Add to clicked
+        btn.classList.add('active');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        projectCards.forEach(card => {
+          const categories = card.getAttribute('data-category') || '';
+          
+          if (filterValue === 'all' || categories.includes(filterValue)) {
+            card.style.display = 'flex';
+            // Slight animation re-trigger
+            gsap.fromTo(card, 
+              { opacity: 0, scale: 0.95 }, 
+              { opacity: 1, scale: 1, duration: 0.4, ease: 'power2.out' }
+            );
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        
+        if (track) {
+          track.scrollTo({ left: 0, behavior: 'smooth' });
+          // Let layout update before checking arrows
+          setTimeout(updateArrowStates, 100);
+        }
+
+        // Update ScrollTrigger after layout shift
+        if (typeof ScrollTrigger !== 'undefined') {
+          ScrollTrigger.refresh();
+        }
+      });
     });
 
-    nextBtn.addEventListener('click', () => {
-      track.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
-    });
-
-    track.addEventListener('scroll', updateArrowStates, { passive: true });
-
-    // Initial state
-    updateArrowStates();
+    // Initial arrow check
+    setTimeout(updateArrowStates, 100);
   }
 
   /* ----------------------------------------------------------
