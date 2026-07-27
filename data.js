@@ -56,7 +56,12 @@ const projectsData = {
       "Built an intuitive exception-handling UI for edge-case manual approvals",
       "Reduced procurement cycle times by 4 days on average"
     ],
-    deliverables: ["User Journey Maps", "Automated Reconciliation Engine", "Internal Dashboard"],
+    deliverables: [
+      "User Journey Maps", 
+      "Automated Reconciliation Engine", 
+      "Internal Dashboard",
+      "<a href='https://po-match-buddy.lovable.app' target='_blank' style='color: var(--accent); text-decoration: underline; font-weight: bold;'>Live working app ↗</a>"
+    ],
     image: "assets/project-po-match.png?v=2"
   },
   "project-5": {
