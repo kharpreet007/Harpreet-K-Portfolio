@@ -65,7 +65,7 @@ const projectsData = {
     image: "assets/project-po-match.png?v=2"
   },
   "project-5": {
-    title: "Kharch Spend Smart",
+    title: "Kharch",
     category: "Full-Stack FinTech",
     whatItIs: "A comprehensive personal finance application designed to help users track expenses, manage budgets, and build better financial habits through gamification and real-time spend analytics.",
     role: "Creator & Lead Developer — Built the entire application end-to-end, focusing on a mobile-first, highly responsive user experience.",
@@ -76,7 +76,12 @@ const projectsData = {
       "Designed a Gamified Savings Module that increased user retention by 22%",
       "Secured user financial data with AES-256 encryption"
     ],
-    deliverables: ["Mobile Application (iOS/Android)", "Backend Architecture", "Go-To-Market Strategy"],
+    deliverables: [
+      "Mobile Application (iOS/Android)", 
+      "Backend Architecture", 
+      "Go-To-Market Strategy",
+      "<a href='https://kharch-simple-flow.lovable.app' target='_blank' style='color: var(--accent); text-decoration: underline; font-weight: bold;'>Live working app ↗</a>"
+    ],
     image: "assets/project-kharch-spend.png?v=2"
   }
 };
