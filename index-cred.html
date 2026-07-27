@@ -21,7 +21,10 @@
     <div class="container header__inner">
       <a href="#" class="logo">Harpreet.</a>
       <nav class="nav">
-        <a href="#work" class="nav__link" data-cursor="hover">Selected Work</a>
+        <a href="#about" class="nav__link" data-cursor="hover">About</a>
+        <a href="#experience" class="nav__link" data-cursor="hover">Experience</a>
+        <a href="#work" class="nav__link" data-cursor="hover">Work</a>
+        <a href="#contact" class="nav__link" data-cursor="hover">Contact</a>
       </nav>
     </div>
   </header>
@@ -47,6 +50,91 @@
     </div>
   </section>
 
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><span class="line"></span>ABOUT ME</h2>
+      </div>
+      <div class="about__content gs-reveal">
+        <p class="about__text">
+          I am a Product Engineer driven by the intersection of deep technical implementation and sharp product strategy. I specialize in building high-performance, elegant software solutions that solve real business problems. From developing AI-powered agents to optimizing fintech architectures, I bring ideas from zero to one with a focus on exceptional user experiences.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><span class="line"></span>SKILLS & EXPERTISE</h2>
+      </div>
+      <div class="skills__grid">
+        <div class="skill-category gs-reveal">
+          <h3>Frontend</h3>
+          <p>React Native, Next.js, HTML5, CSS3, JS/TS, Tailwind, GSAP</p>
+        </div>
+        <div class="skill-category gs-reveal">
+          <h3>Backend & AI</h3>
+          <p>Node.js, Python, FastAPI, Go, RAG Systems, ChromaDB, Llama-3</p>
+        </div>
+        <div class="skill-category gs-reveal">
+          <h3>Architecture & Cloud</h3>
+          <p>Microservices, Firebase, Vercel, Render, CI/CD, System Design</p>
+        </div>
+        <div class="skill-category gs-reveal">
+          <h3>Product</h3>
+          <p>PRD Writing, GTM Strategy, User Journey Mapping, Analytics</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="experience">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><span class="line"></span>EXPERIENCE</h2>
+      </div>
+      
+      <div class="experience__list">
+        <div class="experience__item gs-reveal">
+          <div class="exp-meta">
+            <span class="exp-date">2023 - Present</span>
+            <span class="exp-company">Groww</span>
+          </div>
+          <div class="exp-details">
+            <h3 class="exp-role">Full-Stack AI Engineer</h3>
+            <p class="exp-desc">Spearheaded the development of a production-grade RAG Assistant and AI Ops Automator. Reduced manual operations latency by 40% and established anti-hallucination guardrails for secure financial querying.</p>
+          </div>
+        </div>
+        
+        <div class="experience__item gs-reveal">
+          <div class="exp-meta">
+            <span class="exp-date">2021 - 2023</span>
+            <span class="exp-company">Blinkit (formerly Grofers)</span>
+          </div>
+          <div class="exp-details">
+            <h3 class="exp-role">Product Engineer</h3>
+            <p class="exp-desc">Architected the Emergency Order Fulfillment Platform. Developed routing algorithms and integrated real-time map nodes resulting in a 48% sales increase and 24% faster resolution TAT.</p>
+          </div>
+        </div>
+        
+        <div class="experience__item gs-reveal">
+          <div class="exp-meta">
+            <span class="exp-date">2020 - 2021</span>
+            <span class="exp-company">Kharch</span>
+          </div>
+          <div class="exp-details">
+            <h3 class="exp-role">Creator & Lead Developer</h3>
+            <p class="exp-desc">Designed and built a comprehensive personal finance application from scratch. Implemented gamified savings modules that boosted user retention by 22%.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Projects Section -->
   <section id="work" class="projects">
     <div class="container">
@@ -56,6 +144,27 @@
 
       <div class="project-list" id="project-list">
         <!-- Projects will be injected here via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><span class="line"></span>GET IN TOUCH</h2>
+      </div>
+      <div class="contact__content gs-reveal">
+        <h2 class="contact__heading">Let's build something extraordinary together.</h2>
+        <a href="mailto:hello@example.com" class="btn-magnetic" data-cursor="hover">
+          hello@example.com
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <div class="contact__socials">
+          <a href="#" class="social-link" data-cursor="hover">LinkedIn</a>
+          <a href="#" class="social-link" data-cursor="hover">GitHub</a>
+          <a href="#" class="social-link" data-cursor="hover">Twitter</a>
+        </div>
       </div>
     </div>
   </section>

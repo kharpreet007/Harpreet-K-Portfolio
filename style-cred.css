@@ -363,6 +363,118 @@ body {
   transform: translateX(4px);
 }
 
+/* --- Sections General --- */
+.about, .skills, .experience, .contact {
+  padding: 8rem 0;
+  position: relative;
+}
+
+/* About */
+.about__text {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 900px;
+}
+
+/* Skills */
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+}
+.skill-category h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+.skill-category p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Experience */
+.experience__list {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.experience__item {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--border-glass);
+}
+.experience__item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.exp-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.exp-date {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+.exp-company {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.exp-role {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+.exp-desc {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-weight: 300;
+}
+@media (max-width: 768px) {
+  .experience__item {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Contact */
+.contact__content {
+  text-align: left;
+}
+.contact__heading {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 3rem;
+  max-width: 800px;
+}
+.contact__socials {
+  display: flex;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+.social-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color var(--transition-fast);
+}
+.social-link:hover {
+  color: var(--text-primary);
+}
+
 /* Footer */
 .footer {
   padding: 4rem 0 2rem;
