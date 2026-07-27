@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harpreet K — V2 Premium</title>
+  
+  <link rel="stylesheet" href="style-cred.css">
+  
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">Harpreet.</a>
+      <nav class="nav">
+        <a href="#work" class="nav__link" data-cursor="hover">Selected Work</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__content">
+        <span class="hero__greeting">Harpreet Kaur</span>
+        <h1 class="hero__title">
+          Product 
+          <span>Engineer.</span>
+        </h1>
+        <p class="hero__subtitle">
+          Building high-performance, elegant software solutions. Merging deep technical expertise with sharp product strategy.
+        </p>
+      </div>
+      
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="work" class="projects">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Selected Work.</h2>
+      </div>
+
+      <div class="project-list" id="project-list">
+        <!-- Projects will be injected here via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Harpreet Kaur. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="main-cred.js" defer></script>
+</body>
+</html>
