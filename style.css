@@ -79,6 +79,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -1460,9 +1461,19 @@ button {
     display: none;
   }
 
-  /* Fix for projects carousel mobile layout */
+  /* Fix for projects carousel mobile layout: stack vertically */
   .projects__carousel {
     gap: 0;
+  }
+  
+  .projects__track {
+    flex-direction: column;
+    overflow-x: hidden;
+    gap: 2rem;
+  }
+  
+  .projects__track-wrapper {
+    overflow: hidden;
   }
 
 
@@ -1508,7 +1519,8 @@ button {
   }
 
   .project-card {
-    flex: 0 0 min(340px, 88vw);
+    flex: none;
+    width: 100%;
   }
 
   .skills__grid {
@@ -1527,7 +1539,13 @@ button {
 
   .hero__ctas {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero__ctas .btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .contact__links {
