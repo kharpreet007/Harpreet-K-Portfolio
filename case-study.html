@@ -128,6 +128,56 @@
     .back-btn:hover {
       color: var(--accent);
     }
+    
+    /* Markdown Styles */
+    .content-block {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--border-radius-lg);
+      padding: 3rem;
+      box-shadow: var(--shadow-brutalist);
+    }
+    .markdown-body {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+    .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4 {
+      color: var(--text-primary);
+      font-family: var(--font-display);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    .markdown-body p { margin-bottom: 1.5rem; }
+    .markdown-body ul, .markdown-body ol {
+      padding-left: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .markdown-body li { margin-bottom: 0.5rem; }
+    .markdown-body blockquote {
+      background: var(--bg-elevated);
+      border-left: 4px solid var(--accent);
+      padding: 1rem 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+    }
+    .markdown-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+    }
+    .markdown-body th, .markdown-body td {
+      text-align: left;
+      padding: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .markdown-body th {
+      color: var(--text-primary);
+      font-weight: bold;
+    }
   </style>
 </head>
 <body style="cursor: auto;">
@@ -149,7 +199,8 @@
     </div>
   </footer>
 
-  <script src="data.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="data.js?v=8"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -167,7 +218,7 @@
         </div>
       `;
     } else {
-      mainContainer.innerHTML = `
+      const heroHtml = `
         <section class="case-study-hero">
           <div class="container">
             <a href="index.html#projects" class="back-btn">
@@ -177,50 +228,81 @@
             <div class="case-study-header">
               <span class="case-study-category">${project.category}</span>
               <h1 class="case-study-title">${project.title}</h1>
+              <div style="display: flex; gap: 1rem; align-items: center; margin-top: 1rem; flex-wrap: wrap;">
+                ${project.githubLink ? `<a href="${project.githubLink}" target="_blank" class="btn btn--primary" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>View on GitHub</a>` : ''}
+                ${project.demoLink ? `<a href="${project.demoLink}" target="_blank" class="btn btn--primary" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; background-color: var(--text-primary); color: var(--bg-primary);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>View Demo</a>` : ''}
+              </div>
             </div>
             <img src="${project.image}" alt="${project.title} Interface" class="case-study-image">
           </div>
         </section>
+      `;
 
-        <section class="case-study-body">
-          <div class="container case-study-grid">
-            <div class="cs-main-content">
-              <div class="cs-section">
-                <h2 class="cs-heading">What it is</h2>
-                <p class="cs-text">${project.whatItIs}</p>
-              </div>
-              
-              <div class="cs-section">
-                <h2 class="cs-heading">My Role</h2>
-                <p class="cs-text">${project.role}</p>
-              </div>
-
-              <div class="cs-section">
-                <h2 class="cs-heading">Key Highlights</h2>
-                <ul class="cs-list">
-                  ${project.highlights.map(h => `<li>${h}</li>`).join('')}
-                </ul>
+      if (project.markdownFile) {
+        mainContainer.innerHTML = heroHtml + `
+          <section class="case-study-body">
+            <div class="container">
+              <div class="content-block markdown-body">
+                Loading project details...
               </div>
             </div>
-
-            <aside class="cs-sidebar">
-              <div class="cs-sidebar-block">
-                <h3 class="cs-sidebar-heading">Tech & Tools</h3>
-                <div class="cs-tag-cloud">
-                  ${project.tech.map(t => `<span class="cs-tag">${t}</span>`).join('')}
+          </section>
+        `;
+        
+        fetch(project.markdownFile)
+          .then(res => {
+            if (!res.ok) throw new Error("Could not load markdown file");
+            return res.text();
+          })
+          .then(text => {
+            document.querySelector('.markdown-body').innerHTML = marked.parse(text);
+          })
+          .catch(err => {
+            document.querySelector('.markdown-body').innerHTML = "<p>Error loading content.</p>";
+            console.error(err);
+          });
+      } else {
+        mainContainer.innerHTML = heroHtml + `
+          <section class="case-study-body">
+            <div class="container case-study-grid">
+              <div class="cs-main-content">
+                <div class="cs-section">
+                  <h2 class="cs-heading">What it is</h2>
+                  <p class="cs-text">${project.whatItIs}</p>
+                </div>
+                
+                <div class="cs-section">
+                  <h2 class="cs-heading">My Role</h2>
+                  <p class="cs-text">${project.role}</p>
+                </div>
+  
+                <div class="cs-section">
+                  <h2 class="cs-heading">Key Highlights</h2>
+                  <ul class="cs-list">
+                    ${project.highlights.map(h => `<li>${h}</li>`).join('')}
+                  </ul>
                 </div>
               </div>
-
-              <div class="cs-sidebar-block" style="background: var(--bg-primary);">
-                <h3 class="cs-sidebar-heading" style="color: var(--text-primary)">Deliverables</h3>
-                <ul class="cs-list" style="margin-top: 0;">
-                  ${project.deliverables.map(d => `<li style="font-size: 0.95rem; margin-bottom: 0.5rem;">${d}</li>`).join('')}
-                </ul>
-              </div>
-            </aside>
-          </div>
-        </section>
-      `;
+  
+              <aside class="cs-sidebar">
+                <div class="cs-sidebar-block">
+                  <h3 class="cs-sidebar-heading">Tech & Tools</h3>
+                  <div class="cs-tag-cloud">
+                    ${project.tech.map(t => `<span class="cs-tag">${t}</span>`).join('')}
+                  </div>
+                </div>
+  
+                <div class="cs-sidebar-block" style="background: var(--bg-primary);">
+                  <h3 class="cs-sidebar-heading" style="color: var(--text-primary)">Deliverables</h3>
+                  <ul class="cs-list" style="margin-top: 0;">
+                    ${project.deliverables.map(d => `<li style="font-size: 0.95rem; margin-bottom: 0.5rem;">${d}</li>`).join('')}
+                  </ul>
+                </div>
+              </aside>
+            </div>
+          </section>
+        `;
+      }
     }
   </script>
 </body>

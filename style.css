@@ -458,7 +458,7 @@ button {
 
 .hero__image img {
   width: 100%;
-  max-width: 450px;
+  max-width: 550px;
   border-radius: var(--border-radius-lg);
   border: 4px solid var(--border);
   box-shadow: 12px 12px 0 var(--accent);
@@ -519,7 +519,7 @@ button {
   font-weight: 400;
   color: var(--text-secondary);
   line-height: 1.6;
-  max-width: 560px;
+  max-width: 850px;
   margin-bottom: 2.5rem;
   opacity: 0;
   transform: translateY(30px);
@@ -1172,6 +1172,21 @@ button {
   transition: border-color var(--duration-fast) var(--ease-out-expo),
               color var(--duration-fast) var(--ease-out-expo),
               background-color var(--duration-fast) var(--ease-out-expo);
+}
+
+.skills__category:nth-child(1) .skills__item {
+  background-color: #fffbeb;
+  color: var(--text-primary);
+}
+
+.skills__category:nth-child(2) .skills__item {
+  background-color: #eff6ff;
+  color: var(--text-primary);
+}
+
+.skills__category:nth-child(3) .skills__item {
+  background-color: #f0fdf4;
+  color: var(--text-primary);
 }
 
 .skills__item:hover {

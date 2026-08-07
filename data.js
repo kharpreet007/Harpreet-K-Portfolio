@@ -1,8 +1,10 @@
 const projectsData = {
   "project-1": {
-    title: "Groww AI Ops Automator",
+    title: "Groww Review Pulse",
     category: "AI/ML & Full-Stack",
-    whatItIs: "An end-to-end LLM pipeline built to eliminate manual weekly reporting across scattered data sources. It aggregates live data, generates intelligence reports using a Map-Reduce architecture, and dispatches them via a custom MCP server, creating complete visibility for product teams.",
+    whatItIs: "An automated weekly \"pulse\" that turns public Google Play Store reviews for Groww into a one-page insight report and delivers it to stakeholders through Google Workspace, using MCP (Model Context Protocol) so that writes to Google Docs and Gmail go through dedicated MCP servers—not ad hoc API calls inside the agent.",
+    markdownFile: "docs/project-1.md",
+    githubLink: "https://github.com/kharpreet007/Grow-Pulse.git",
     role: "Lead Developer & Product Manager — Architected the entire pipeline from conceptualization to deployment, ensuring adherence to strict anti-hallucination and PII compliance standards.",
     tech: ["Python", "LangChain", "Map-Reduce", "MCP Server", "Groq LLM", "Docker"],
     highlights: [
@@ -15,39 +17,30 @@ const projectsData = {
     image: "assets/project-one.png?v=3"
   },
   "project-2": {
-    title: "Groww Mutual Fund RAG Assistant",
+    title: "Mutual Fund FAQ Assistant",
     category: "AI/ML",
-    whatItIs: "A production-grade Retrieval-Augmented Generation (RAG) system designed to provide highly accurate, real-time Q&A for mutual funds. It strictly adheres to financial regulations by refusing advisory queries and supplying only factual information.",
+    whatItIs: "A lightweight, facts-only FAQ assistant for mutual fund schemes using a Retrieval-Augmented Generation (RAG) approach. It retrieves verifiable information exclusively from official public sources (AMC, AMFI, SEBI) while strictly refusing any investment advice or recommendations.",
+    markdownFile: "docs/project-2.md",
+    githubLink: "https://github.com/kharpreet007/RAG-Mutual-Fund-CHATBOT.git",
     role: "Full-Stack AI Engineer — Designed the vector database architecture, built the automated ingestion pipeline, and developed the Next.js frontend interface.",
     tech: ["FastAPI", "ChromaDB", "Next.js", "Tailwind CSS", "HuggingFace Embeddings", "Llama-3"],
     highlights: [
-      "Deployed on Render + Vercel with a nightly GitHub Actions CI/CD pipeline",
-      "Built custom offline scraper for automated daily HTML-to-Text ingestion",
-      "Integrated a specialized QueryClassifier to block non-factual or advisory financial queries",
-      "Achieved sub-second retrieval latency using local ChromaDB vector embeddings"
+      "Ensures responses are limited to 3 sentences with exactly one verified citation link",
+      "Implements strict refusal handling for non-factual or advisory queries",
+      "Retrieves data exclusively from official public sources without collecting PII",
+      "Provides clear source linking and a last updated date for maximum transparency"
     ],
-    deliverables: ["Full-Stack Application", "Automated Data Ingestion Pipeline", "Regulatory Guardrail Module"],
+    deliverables: ["Minimal UI", "README Document", "Disclaimer Snippet"],
     image: "assets/project-rag.png?v=2"
   },
-  "project-3": {
-    title: "Emergency Order Fulfillment Platform",
-    category: "Supply Chain",
-    whatItIs: "A robust logistics routing and fulfillment platform designed for critical, high-priority emergency orders. It dynamically calculates the most efficient dispatch routes and provides real-time tracking for logistics partners.",
-    role: "Product Manager — Led the discovery phase, defined operational metrics, and oversaw the MVP rollout across three regional dark stores.",
-    tech: ["Node.js", "React", "PostgreSQL", "Google Maps API", "Redis"],
-    highlights: [
-      "Reduced average emergency dispatch times by 34% in the first quarter",
-      "Implemented a real-time WebSocket dashboard for warehouse operators",
-      "Designed an automated fallback routing algorithm for unavailable delivery partners",
-      "Integrated seamlessly with existing warehouse management systems (WMS)"
-    ],
-    deliverables: ["Product Requirement Document", "Routing Algorithm Specifications", "MVP Application"],
-    image: "assets/project-fulfillment.png?v=2"
-  },
+
   "project-4": {
     title: "PO Match Buddy",
     category: "Supply Chain Automation",
     whatItIs: "An intelligent, automated reconciliation tool designed to cross-reference and match purchase orders against invoices and delivery receipts, eliminating hours of manual ledger work for procurement teams.",
+    markdownFile: "docs/project-4.md",
+    githubLink: "https://github.com/kharpreet007/po-match-buddy.git",
+    demoLink: "https://preview--po-match-buddy.lovable.app/auth",
     role: "Product Owner — Conducted user interviews with the finance team, prioritized the feature backlog, and managed sprint delivery.",
     tech: ["Python", "Pandas", "OCR (Tesseract)", "Django", "Vue.js"],
     highlights: [
@@ -68,6 +61,9 @@ const projectsData = {
     title: "Kharch",
     category: "Full-Stack FinTech",
     whatItIs: "A comprehensive personal finance application designed to help users track expenses, manage budgets, and build better financial habits through gamification and real-time spend analytics.",
+    markdownFile: "docs/project-5.md",
+    githubLink: "https://github.com/kharpreet007/kharch-spend-smart.git",
+    demoLink: "https://preview--kharch-simple-flow.lovable.app/",
     role: "Creator & Lead Developer — Built the entire application end-to-end, focusing on a mobile-first, highly responsive user experience.",
     tech: ["React Native", "Expo", "Firebase", "Node.js", "Chart.js"],
     highlights: [
@@ -83,5 +79,23 @@ const projectsData = {
       "<a href='https://kharch-simple-flow.lovable.app' target='_blank' style='color: var(--accent); text-decoration: underline; font-weight: bold;'>Live working app ↗</a>"
     ],
     image: "assets/project-kharch-spend.png?v=2"
+  },
+  "project-6": {
+    title: "Blinkit Trust Decision Layer",
+    category: "Product Strategy & Growth",
+    whatItIs: "A prototype-level feature designed to test whether surfacing targeted, category-specific trust signals at the point of purchase hesitation measurably reduces first-purchase friction in new categories.",
+    markdownFile: "docs/project-6.md",
+    githubLink: "https://github.com/kharpreet007/blinkit-trust-panel-demo.git",
+    demoLink: "https://preview--blink-ai-halo-effect.lovable.app/",
+    role: "Product Manager — Conducted user research, formulated hypotheses, and designed the feature prototype.",
+    tech: ["Product Strategy", "User Research", "Prototyping", "UX Design"],
+    highlights: [
+      "Identified that first-time category hesitation stems from a lack of trust signals rather than lack of intent",
+      "Designed a context-aware panel to render trust signals dynamically beneath the Add-to-Cart button",
+      "Built resilient logic to handle cold-start products without fabricating data (e.g. hiding empty review counts)",
+      "Integrated seamlessly without adding friction or cluttering the core experience for repeat buyers"
+    ],
+    deliverables: ["Product Requirements Document", "Interactive Prototype"],
+    image: "assets/project-blinkit.png"
   }
 };
