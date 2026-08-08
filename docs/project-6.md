@@ -1,5 +1,6 @@
 # PRD: Trust Decision Layer — Blinkit Category Expansion
 
+![Blinkit Trust Layer Prototype](../assets/project-blinkit.png)
 **Author:** Harpreet Kaur
 **Program:** NextLeap PM Fellowship — Cohort 48
 **Status:** Draft for review
@@ -23,6 +24,19 @@ Give first-time category buyers the minimum trust information they need to conve
 - This is not a general trust/safety redesign of the product page.
 - This is not solving post-purchase experience or re-engagement after a bad experience (see Open Question in §8).
 - This is not a backend/data-pipeline spec — the prototype simulates the trigger condition rather than implementing real order-history detection.
+
+### User Flow & Trust Injection
+
+```mermaid
+flowchart TD
+    A[User Browses New Category] --> B{Has bought in category before?}
+    B -->|Yes| C[Standard Product Detail Page]
+    B -->|No| D[Inject Trust Decision Layer]
+    D --> E[Surface Seller Verification]
+    D --> F[Surface Category Social Proof]
+    D --> G[Highlight Easy Returns]
+    E & F & G --> H[Increase Add-to-Cart Conversion]
+```
 
 ## 3. Target User
 

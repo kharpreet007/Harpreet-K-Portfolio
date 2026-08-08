@@ -1,5 +1,6 @@
 # Kharch — Product Requirements Document (PRD)
 
+![Kharch Dashboard](../assets/project-kharch-spend.png?v=2)
 **Product:** Kharch (Expense Tracker)
 **Author:** Harpreet
 **Status:** Draft v1.0
@@ -12,6 +13,17 @@
 Kharch is a minimal expense tracker built around a single philosophy: **capture an expense in under 5 seconds, understand spending at a glance, and let nothing else get in the way.**
 
 It is deliberately *not* a finance management platform. There are no bank integrations, no budgeting rules, and no complex analytics in v1. Every design and product decision is filtered through one question: *does this help someone log an expense faster, or understand their spending more clearly?* If not, it's cut.
+
+### Core Data Flow
+
+```mermaid
+flowchart TD
+    A[User Mobile App] --> B[Quick Entry UI]
+    B -->|Amount & Category| C[Offline First Storage]
+    C --> D[Firebase Cloud Sync]
+    C --> E[Real-Time Dashboard]
+    E --> F[Spend Analytics & Charts]
+```
 
 ---
 

@@ -1,4 +1,6 @@
-# Problem Statement: Mutual Fund FAQ Assistant (Facts-Only Q&A)
+# Mutual Fund FAQ Assistant (Facts-Only Q&A)
+
+![Mutual Fund RAG Assistant](../assets/project-rag.png?v=2)
 
 ## Overview
 
@@ -15,6 +17,19 @@ Design and implement a lightweight **Retrieval-Augmented Generation (RAG)**-base
 - Answers factual queries about mutual fund schemes
 - Uses a curated corpus of official documents
 - Provides concise, source-backed responses
+
+### System Architecture
+
+```mermaid
+flowchart TD
+    A[User Query] --> B{Intent Classifier}
+    B -->|Investment Advice| C[Strict Refusal Handler]
+    B -->|Factual Query| D[Vector Search ChromaDB]
+    D --> E[Retrieve AMFI/SEBI Context]
+    E --> F[Llama-3 Generation]
+    F --> G[Response + Verified Citation]
+    C --> G
+```
 
 ---
 

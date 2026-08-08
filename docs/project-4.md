@@ -1,5 +1,6 @@
 # Product Requirements Document: PO Match
 
+![PO Match Buddy Dashboard](../assets/project-po-match.png?v=2)
 **Author:** Harpreet Kaur
 **Status:** V1 Prototype
 **Repo:** github.com/kharpreet007/po-match-buddy
@@ -22,6 +23,19 @@ Existing solutions (ERPs, procurement suites) are too heavy for this problem. SM
 PO Match is a lightweight, AI-powered validation tool that compares a supplier quotation against a Purchase Order and surfaces every mismatch — supplier name, item name, item code, quantity, unit price, tax, and unit of measure — in under 60 seconds.
 
 **What it is:** A focused, single-purpose validation utility with zero onboarding and zero ERP integration.
+
+### System Architecture
+
+```mermaid
+flowchart TD
+    A[Procurement Executive] --> B[Upload PO & Quote PDFs]
+    B --> C[OCR Engine]
+    C --> D[Data Extraction & Structuring]
+    D --> E{Matching Engine}
+    E -->|Mismatch Detected| F[Highlight Variances]
+    E -->|Match Approved| G[Clear for Dispatch]
+    F --> H[Interactive Resolution UI]
+```
 
 **What it is not:**
 - Not an ERP
