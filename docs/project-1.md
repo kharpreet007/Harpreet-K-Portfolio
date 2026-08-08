@@ -1,8 +1,5 @@
 # Groww Review Pulse — Problem Statement
 
-![Groww AI Pulse Dashboard](../assets/project-one.png?v=3)
-
-
 We are building an automated weekly **"pulse"** that turns public **Google Play Store** reviews for **Groww** into a **one-page insight report** and delivers it to stakeholders through Google Workspace, using **MCP (Model Context Protocol)** so that writes to Google Docs and Gmail go through dedicated MCP servers—not ad hoc API calls inside the agent.
 
 

@@ -1,6 +1,5 @@
 # PRD: Trust Decision Layer — Blinkit Category Expansion
 
-![Blinkit Trust Layer Prototype](../assets/project-blinkit.png)
 **Author:** Harpreet Kaur
 **Program:** NextLeap PM Fellowship — Cohort 48
 **Status:** Draft for review

@@ -1,6 +1,5 @@
 # Kharch — Product Requirements Document (PRD)
 
-![Kharch Dashboard](../assets/project-kharch-spend.png?v=2)
 **Product:** Kharch (Expense Tracker)
 **Author:** Harpreet
 **Status:** Draft v1.0

@@ -1,6 +1,5 @@
 # Product Requirements Document: PO Match
 
-![PO Match Buddy Dashboard](../assets/project-po-match.png?v=2)
 **Author:** Harpreet Kaur
 **Status:** V1 Prototype
 **Repo:** github.com/kharpreet007/po-match-buddy

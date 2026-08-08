@@ -1,7 +1,5 @@
 # Mutual Fund FAQ Assistant (Facts-Only Q&A)
 
-![Mutual Fund RAG Assistant](../assets/project-rag.png?v=2)
-
 ## Overview
 
 The objective of this project is to build a **facts-only FAQ assistant** for mutual fund schemes, using **Groww** as the reference product context. The assistant will answer objective, verifiable queries related to mutual funds by retrieving information exclusively from official public sources, such as **AMC (Asset Management Company)** websites, **AMFI**, and **SEBI**.
